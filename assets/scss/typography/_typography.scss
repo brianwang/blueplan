@@ -1,0 +1,57 @@
+@import "font-families";
+@import "../functions/typography";
+
+/* Typography
+ * -------------------------------------------
+ * These styles define basic typography, baselines,
+ * font sizes and vertical rhythm
+ *
+ */
+
+@import "../settings";
+
+/*-------------------------------------------*/
+
+body {
+  font-family: $sans;
+  font-size: #{$base-font-size}px;
+  line-height: ($base-line-height / $base-font-size);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;	
+}
+
+// HEADINGS
+/*-------------------------------------------*/
+
+h1 {
+  @include font-size(32);
+}
+
+h2 {
+  @include font-size(28);
+}
+
+h3 {
+  @include font-size(24);
+}
+
+h4 {
+  @include font-size(20);
+}
+
+h5 {
+  @include font-size(16);
+}
+
+h6 {
+  @include font-size(14);
+}
+
+/*-------------------------------------------*/
+
+@import "code";
+@import "lists";
+

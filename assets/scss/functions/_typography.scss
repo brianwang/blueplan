@@ -1,0 +1,14 @@
+/* Typography
+ * -------------------------------------------
+ * Useful functions for typography
+ *
+ */
+
+@function em($target,$context: 16 ) {
+    @return $target / $context * 1em;
+}
+
+@mixin font-size( $size, $base-font-size: 16 ) {
+    font-size: 0px + $size;
+    font-size: ($size / $base-font-size) + rem;
+}

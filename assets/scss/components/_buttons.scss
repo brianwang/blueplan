@@ -1,0 +1,27 @@
+/* Buttons
+ * -------------------------------------------
+ * Button styles
+ *
+ */
+
+@import '../bourbon/bourbon';
+@import '../settings';
+
+.btn, input[type=submit].btn {
+
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background: $blue;
+  color: #FFF;
+  border-color: auto;
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+
+  &:hover {
+    background: darken($blue, 10%);
+  }
+}

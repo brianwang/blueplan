@@ -1,0 +1,14 @@
+/* Links
+ * -------------------------------------------
+ * This module defines basic link styles
+ *
+ */
+
+@import "../settings";
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $blue;
+  &:focus { outline: none; }
+}

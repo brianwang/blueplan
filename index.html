@@ -9,13 +9,54 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <link href="/assets/css/style.css" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/all.css">
         <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:8080');
+            socket.on('news', function(data) {
+                console.log(data);
+                socket.emit('my other event', {my: 'data'});
+            });
+        </script>
     </head>
     <body>
-        <div>
+        <div id="header" class="container-full fixed">
+            <nav>
+                <ul>
+                    <li><a>首页</a></li>
+                    <li><a>首页</a></li>
+                    <li><a>首页</a></li>
+                    <li><a>首页</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div id="content" class="container">
+            <p>HELLLO</p>
+            <p>HELLLO</p><p>HELLLO</p><p>HELLLO</p><p>HELLLO</p><p>HELLLO</p>
             
             
+            <p>HELLLO</p><p>HELLLO</p><p>HELLLO</p>
+            
+            <p>HELLLO</p><p>HELLLO</p><p>HELLLO</p>
+            
+            <p>HELLLO</p><p>HELLLO</p><p>HELLLO</p>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
         </div>
     </body>
 </html>

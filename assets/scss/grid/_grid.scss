@@ -1,0 +1,33 @@
+/* Grid
+ * -------------------------------------------
+ * Defines grid structure. Relies on bourbon and neat libraries
+ *
+ */
+
+@import "../bourbon/bourbon";
+@import "../neat/neat";
+
+@mixin gravity-container {
+  margin: 0 auto;
+  width: 80%;
+  overflow: hidden;
+}
+
+.container {
+  @include gravity-container();
+}
+
+.padded {
+  padding: 20px;
+}
+
+.container-full {
+  @include gravity-container();
+  width: 100%;
+}
+
+@for $i from 1 to 12 {
+  .span-#{$i} {
+    @include span-columns($i);
+  }
+}

@@ -1,0 +1,19 @@
+/* Lists
+ * -------------------------------------------
+ * This module defines basic list styles
+ *
+ */
+
+@mixin bullet {
+  list-style-position: outside; 
+  list-style-type: disc;
+}
+
+@mixin nobullet {
+  list-style-type: none;
+}
+
+ul { 
+  @include nobullet; 
+  li { }
+}

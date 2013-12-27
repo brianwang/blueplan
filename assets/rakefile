@@ -1,0 +1,23 @@
+namespace :gravity do
+
+  task :build do
+    system 'bundle'
+    Rake::Task["gravity:install"].execute
+    system './compile'
+  end
+
+  task :update do |t|
+    system 'cd scss && bourbon update'
+    system 'cd scss && neat update'
+  end
+
+  task :install do
+    system 'cd scss && bourbon install'
+    system 'cd scss && neat install'
+  end
+  
+  task :clean do
+    system 'rm -rf scss/bourbon'
+    system 'rm -rf scss/neat'
+  end
+end

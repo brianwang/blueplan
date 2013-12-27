@@ -1,0 +1,45 @@
+/* Forms
+ * -------------------------------------------
+ * HTML form styles
+ *
+ */
+
+$form-padding: 5px;
+
+@mixin form-item {
+  padding: $form-padding;
+  width: 100%;
+  display: block;
+  border: 1px solid #ddd;
+  &:focus { 
+    border: 1px solid #ccc;
+    outline: none;
+  }
+}
+
+@mixin submit-button {
+  padding: 5px 20px;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  @include form-item;
+}
+
+input[type="submit"], input[type="reset"] {
+  @include submit-button;
+}

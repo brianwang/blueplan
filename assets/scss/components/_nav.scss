@@ -1,0 +1,18 @@
+nav{
+    background-color: $turquoise;
+    ul{
+        text-align: center;
+        line-height: 52px;
+        height: 52px;
+        li{
+            display: inline;
+            list-style:none;
+            width: 120px;
+            float: left;
+        }
+        li a{
+            color: $carrot;
+            font-size: $size-mid;
+        }
+    }    
+}

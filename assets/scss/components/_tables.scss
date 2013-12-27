@@ -1,0 +1,33 @@
+/* Tables
+ * -------------------------------------------
+ * Pretty HTML tables
+ *
+ */
+
+table {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  border-collapse: separate;
+  th, td {
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    font-weight: bold;
+    border-bottom-width: 2px;
+  }
+}
+
+
+// ZEBRA-STRIPING
+// --------------
+
+table.striped {
+  tbody {
+    tr:nth-child(odd) td {
+      background-color: #f9f9f9;
+    }
+  }
+}
