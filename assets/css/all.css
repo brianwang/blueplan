@@ -773,3 +773,36 @@ table {
 
 table.striped tbody tr:nth-child(odd) td {
   background-color: #f9f9f9; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2013-12-31, 6:17:29
+    Author     : brian
+*/
+#canvas {
+  position: relative;
+  display: block;
+  float: left;
+  margin-top: 8px;
+  width: 1024px; }
+
+.canvas {
+  position: relative;
+  z-index: 9; }
+  .canvas table {
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray; }
+  .canvas Inherited from body.canvas.show.with-canvas.updateable-canvas
+  .content-container,
+  .canvas table.canvas td.area,
+  .canvas .snapshots .content-container table.canvas td.area, .canvas .risks .content-container table.canvas td.area, .canvas .canvas.wizard .content-container table.canvas td.area, .canvas .experiments .content-container table.canvas td.area {
+    vertical-align: top;
+    border: 2px solid #000;
+    background-color: #fff; }
+  .canvas .area-title {
+    color: #222; }

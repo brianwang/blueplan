@@ -1,0 +1,31 @@
+#canvas {
+    position: relative;
+    display: block;
+    float: left;
+    margin-top: 8px;
+    width: 1024px;
+}
+
+.canvas {
+    position: relative;
+    z-index: 9;
+
+    table {
+        border-collapse: separate;
+        border-spacing: 2px;
+        border-color: gray;
+    }
+    Inherited from body.canvas.show.with-canvas.updateable-canvas
+
+    .content-container,
+    table.canvas td.area, 
+    .snapshots .content-container table.canvas td.area, .risks .content-container table.canvas td.area, .canvas.wizard .content-container table.canvas td.area, .experiments .content-container table.canvas td.area {
+        vertical-align: top;
+        border: 2px solid #000;
+        background-color: #fff;
+    }
+
+    .area-title {
+        color: #222;
+    }
+}
