@@ -2,30 +2,40 @@
     position: relative;
     display: block;
     float: left;
-    margin-top: 8px;
+    margin-top: 60px;
     width: 1024px;
+}
+#content{
+    
 }
 
 .canvas {
     position: relative;
-    z-index: 9;
-
-    table {
-        border-collapse: separate;
-        border-spacing: 2px;
-        border-color: gray;
+    border: solid 1px $black;
+    .area{
+        border: solid 1px $black;   
     }
-    Inherited from body.canvas.show.with-canvas.updateable-canvas
+    table {
+        border-color: gray;
+        tbody{
+            .canvas-cell canvas-cell-main{
+                position: relative;
+                width: 100%;
+                padding: 5px 0 0px 4px;
 
-    .content-container,
-    table.canvas td.area, 
-    .snapshots .content-container table.canvas td.area, .risks .content-container table.canvas td.area, .canvas.wizard .content-container table.canvas td.area, .experiments .content-container table.canvas td.area {
-        vertical-align: top;
-        border: 2px solid #000;
-        background-color: #fff;
+            }
+            tr{
+                td{
+                    //border: solid 1px $black;   
+
+                }
+            }
+        }
     }
 
     .area-title {
         color: #222;
     }
 }
+
+

@@ -10,8 +10,14 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="assets/css/all.css">
-        <!--script src="/socket.io/socket.io.js"></script-->
-        <script src="http://libs.baidu.com/jquery/1.7.2/jquery.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:8080');
+            socket.on('news', function(data) {
+                console.log(data);
+                socket.emit('my other event', {my: 'data'});
+            });
+        </script>
     </head>
     <body>
         <div id="header" class="container-full fixed">
@@ -26,14 +32,7 @@ and open the template in the editor.
 
         </div>
         <div id="content" class="container">
-            <div id="canvas">
-                <div class="dropdown">
-                    <a href="#" class="btn">画布列表</a>
-                    <ul>
-                        <li><a>画布一</a></li>
-                        <li><a>画布一</a></li>
-                    </ul>
-                </div>
+            <div id="canvas" style="margin-top: 52px;">
                 <table class="canvas" style="height: 209px;">
                     <tbody><tr>
                             <td class="area" height="66%" id="problem" rowspan="2" width="20%"><table class="cell-container"><tbody><tr><td class="canvas-cell canvas-cell-main"><h3 class="main"><div class="area-title">问题</div><div class="help"><a class="helpIcon" href="#"><img height="24" src="/images/help.png" alt="Help"></a></div></h3><ol class="sortable"></ol><div class="add-new-item" style="border:dashed 1px #000000;margin-top:6px;display:none;"><i>Click to add new</i></div><div class="short_help" style="display:block;"><span class="content">列出你要解决的三个关键问题</span></div><div class="order" style="display:block;"><span class="content">2</span></div></td></tr><tr><td class="canvas-cell canvas-cell-subsection" style="height:33%;"><h3 class="subsection"><div class="area-title">存在的替代品</div></h3><ol class="sortable"></ol><div class="add-new-subsection-item" style="border:dashed 1px #000000;margin-top:6px;display:none;"><i>Click to add new</i></div><div class="short_help" style="display: block;"><span class="content">列举出当今已经解决这些问题的产品/服务</span></div></td></tr><tr><td class="bottom"><span class="bottom without-experiments-comments empty-bottom" style="display: none;"><span class="comments_section"><a href="/canvases/140364/comments?area=problem" class="add black addComment"><span class="add_comment_text">Add Comment</span><span class="comments icon" style="display: none;">
@@ -94,19 +93,5 @@ and open the template in the editor.
                 <!-- /= render :partial => 'canvas/collaborators/show' -->
             </div>
         </div>
-        <script type="text/javascript">
-
-            $(document).ready(function() {
-                $('.dropdown a').mouseover(function() {
-                    var next = $(this).next();
-                    if (next.hasClass('active')) {
-                        //next.removeClass('active');
-                    } else {
-                        next.addClass('active');
-                    }
-                });
-            });
-
-        </script>
     </body>
 </html>
