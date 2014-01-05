@@ -1,12 +1,9 @@
 #canvas {
     position: relative;
-    display: block;
-    float: left;
     margin-top: 60px;
-    width: 1024px;
 }
 #content{
-    
+
 }
 
 .canvas {
@@ -15,15 +12,27 @@
     .area{
         border: solid 1px $black;   
     }
+    .short_help{
+        color: #ddd;
+    }
+    .order {
+        color: #0099ff;
+        font-size: 5.0em;
+        text-align: center;
+    }
+    .cell-container, .canvas-cell, .canvas-cell-main{
+        height: 100%;
+        width: 100%;
+        margin-bottom: 0;
+        vertical-align: top;
+        background-color: #fff;
+        position: relative;
+        width: 100%;
+        padding: 5px 0 0px 4px;
+    }
     table {
         border-color: gray;
         tbody{
-            .canvas-cell canvas-cell-main{
-                position: relative;
-                width: 100%;
-                padding: 5px 0 0px 4px;
-
-            }
             tr{
                 td{
                     //border: solid 1px $black;   
@@ -35,7 +44,11 @@
 
     .area-title {
         color: #222;
+        font-size: 0.7em;
     }
+    .help{position: absolute;
+          top: 0px;
+          right: 4px;}
 }
 
 
