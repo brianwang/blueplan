@@ -7,9 +7,11 @@ and open the template in the editor.
     Created on : 2013-12-28, 0:08:26
     Author     : brian
 */
-*{margin:0;padding: 0;}
-body{
-    font-size: 15px;  
+* {
+	margin: 0;
+	padding: 0;
 }
 
-
+body {
+	font-size: 15px;
+}
