@@ -1,11 +1,12 @@
-#canvas {
-    position: relative;
-    margin-top: 60px;
-}
 #content{
-
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 100%;
 }
-
+#canvas{
+    margin: 0px 50px;
+}
 .canvas {
     position: relative;
     border: solid 1px $black;
