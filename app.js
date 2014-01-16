@@ -87,7 +87,6 @@ app.post('/plan/item/add',function(req,res){
        && params.hasOwnProperty('sid')){
         
         
-        
     }else{
         res.send({result: 'params is not available!'});
     }

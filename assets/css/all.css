@@ -879,3 +879,13 @@ and open the template in the editor.
     #dashboard #projectlist ul li a:hover {
       color: #99f;
       background-color: #eff3fd; }
+
+.dialog {
+  border: 2px solid black;
+  background-color: papayawhip;
+  color: red;
+  padding: 5px; }
+
+.open-btn, .close-btn {
+  border: 1px solid black;
+  cursor: pointer; }

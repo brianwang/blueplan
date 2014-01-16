@@ -3,9 +3,9 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING
   }, {
     associate: function(models) {
-      User.hasMany(models.Plan)
+      User.hasMany(models.Plan);
     }
   });
  
   return Plan;
-}
+};

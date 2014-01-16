@@ -1,31 +1,54 @@
 {% extends 'layout.html' %}
 {% block content %}
-		<div id="dashboard">
-			<h2>项目列表</h2>
-			<a href="javascript:;" class="btn">+添加新的项目</a>
-			<div id="projectlist">
-				<ul>
-					<li class="project"><a href="/products/116897" title="test">
-							<h3>test</h3>
-							<p class="updated_at">Last updated December 26, 2013</p>
-							<p class="access">
-								Owned by <strong>You</strong>. <br> 1 canvas. <br>
-							</p>
-
-
-							<ul class="collaborators">
-								<li id="collaborator_98851">
-									<div class="person">
-										<div class="icon">
-											<img alt="4cf3ba5645acc555f539f53b95f1e548?s=32&amp;d=mm"
-												src="">
-										</div>
-									</div>
-								</li>
-							</ul>
-					</a></li>
-				</ul>
-
-			</div>
-		</div>
+<div id="dashboard">
+    <h2>项目列表</h2>
+    <a href="#modal_project" class="btn" data-bind="click: addproject">+添加新的项目</a>
+    <div id="projectlist">
+        <ul data-bind="foreach: projects">
+            <li class="project">
+                <a  data-bind="attr: { href: '/project/'+id, title: title}">
+                    <h3 data-bind="text: title"></h3>
+                    <p class="updated_at" data-bind="text: time"></p>
+                    <p class="access">
+                        <strong data-bind="text: owner"></strong>. <strong data-bind="text: pcount+'个项目'"></strong>
+                    </p>                 
+                </a></li>
+        </ul>
+    </div>
+</div>
+<div id="modal_project" class="modal">
+    <form id="form_project">
+    <label>项目名称</label>
+    <input type="text" name="title">
+    </form>
+</div>
 {% endblock%}
+
+{% block script %}
+<script type="text/javascript">
+    var model = {
+        projects: ko.observableArray([{id:1,title:'好像木',owner:'小王',time:'2013-1-1',pcount:1}]),
+        addproject: function(obj, event) {
+            $('#modal_project').dialog({
+                buttons: {
+                    "保存": function() {
+                        var obj =$('#form_project').serializeObject();
+                        obj.owner = '小李';
+                        obj.time= new Date();
+                        obj.pcount = parseInt(Math.random()*10);
+                        obj.id = parseInt(Math.random()*10);
+                        model.projects.push(obj);    
+                        $(this).dialog("close");
+                        }
+                    },
+                    Cancel: function() {
+                        $(this).dialog("close");
+                    }
+            });
+            return false;
+        }
+    };
+    ko.applyBindings(model);
+</script>
+{% endblock%}
+
